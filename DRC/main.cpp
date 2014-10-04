@@ -11,9 +11,27 @@ http://ivrg.epfl.ch/research/superpixels
 
 int main(int argc, char** argv)
 {
-	cv::Mat rawImage = cv::imread("a1.jpg");
+	cv::Mat rawImage = cv::imread("frame0000.jpg");
 	cv::Mat depthImage = cv::imread("a1d.jpg");
+	cv::Mat imlab;
+	cv::cvtColor(rawImage, imlab, CV_RGB2Lab);
+	for (int ii = 0; ii < rawImage.rows; ++ii)
+	{
+		for (int jj = 0; jj < rawImage.cols; ++jj)
+		{
+			
+			//std::cout<<((float*)distansImage32F_.data)[ii*cols_+jj] <<std::endl;
+			((unsigned char*)imlab.data)[3*(ii*imlab.cols+jj)+2] = 200;
+			((unsigned char*)imlab.data)[3*(ii*imlab.cols+jj)+1] = 200;
+		}
+	}
 
+	cv::Mat im1;
+	cv::cvtColor(imlab, im1, CV_Lab2RGB);
+	//cv::cvtColor(labImage8UC3_, im1, CV_Lab2LRGB);
+	int a = im1.type();
+	cv::imshow("transLAB", im1);
+	//cv::waitKey(0);
 	cv::Mat cannyImage;
 	int sizeTmp = 10000;
 	cv::Mat imgTmp(sizeTmp, sizeTmp, CV_32FC1);
@@ -68,10 +86,10 @@ int main(int argc, char** argv)
 	std::vector<std::vector<cv::Point> > superPixelList;
 	tic1.reset();
 	tic1.start();
-	Sample.getSuperPixel(rawImage, cannyImage , superPixelList, 15, 30);
+	Sample.getSuperPixel(rawImage, cannyImage , superPixelList, 50, 30);
 	tic1.stop();
 	std::cout<<"SuperPixel = "<<tic1.getTimeMilli()<<std::endl;
-	int a ;
+	int a1 ;
 	std::cin>>a;
 	/*cv::Mat bilaImage;
 	cv::bilateralFilter(rawImage, bilaImage, -1, 10.0, 2.0);

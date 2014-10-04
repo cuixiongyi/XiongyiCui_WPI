@@ -29,10 +29,10 @@ void CalSuperPixel::getSuperPixel(cv::Mat rawImage_arg, cv::Mat superImage_retur
 	initClusterCenter(superPixelList_return);
 	cv::Mat tmpDraw;
 	rawImage_.copyTo(tmpDraw);
-	for (int ii = 0; ii < superPixelList_return.size(); ++ii)
+	/*for (int ii = 0; ii < superPixelList_return.size(); ++ii)
 	{
 		cv::circle(tmpDraw, superPixelList_return[ii][0], 3, cv::Scalar(-1));
-	}
+	}*/
 
 	//cv::imshow("center", tmpDraw);
 	//cv::waitKey(0);
@@ -79,7 +79,7 @@ tic1.reset();
 		cv::imwrite(ss.str(), img);*/
 	}
 	reGroupSuperPixel(superPixelList_return);
-	//printClusterImage(superPixelList_return);
+	printClusterImage(superPixelList_return);
 	//updateSuperPixelList(superPixelList_return);
 
 	superImage_return = superPixelImage16U_;
@@ -148,6 +148,8 @@ void CalSuperPixel::initClusterCenter( std::vector<std::vector<cv::Point> > &sup
 
 void CalSuperPixel::initMat()
 {
+	cv::cvtColor(rawImage_, labImage8UC3_, CV_RGB2Lab);
+	cv::cvtColor(rawImage_, garyImage8U_, CV_RGB2GRAY);
 	superPixelImage16U_.create(rawImage_.size(), CV_16UC1);
 	distansImage32F_.create(rawImage_.size(), CV_32FC1);
 	for (int ii = 0; ii < rows_; ++ii)
@@ -158,12 +160,11 @@ void CalSuperPixel::initMat()
 			//std::cout<<((unsigned short*)superImage16U_.data)[ii*cols_+jj] <<std::endl;
 			((float*)distansImage32F_.data)[ii*cols_+jj] = 1E+35;
 			//std::cout<<((float*)distansImage32F_.data)[ii*cols_+jj] <<std::endl;
+			//((unsigned char*)labImage8UC3_.data)[3*(ii*cols_+jj)+0] = 200;
 		}
 	}
 
 	
-	cv::cvtColor(rawImage_, labImage8UC3_, CV_RGB2Lab);
-	cv::cvtColor(rawImage_, garyImage8U_, CV_RGB2GRAY);
 	cv::Laplacian(garyImage8U_, gradientImage8U_, CV_8U, 1);
 
 	dislab.assign(totalPixelNumber_, -1.0);
@@ -173,7 +174,7 @@ void CalSuperPixel::initMat()
 
 void CalSuperPixel::cluster( std::vector<std::vector<cv::Point> > &superPixelList_return /*= std::vector<std::vector<cv::Point> > ()*/)
 {
-	int offset = 1.5*step_;
+	int offset = 1.6*step_;
 	for (std::size_t kk = 0; kk < superPixelList_return.size(); ++kk)
 	{
 		
@@ -230,7 +231,7 @@ inline float CalSuperPixel::computeD(const int kk, const int x_arg, const int y_
 	dxy = float(x_arg-centerPoint_arg.x)*float(x_arg-centerPoint_arg.x) + float(y_arg-centerPoint_arg.y)*float(y_arg-centerPoint_arg.y);
 
 
-	return (dlab/maxlabDis_[kk]*m_ + dxy*maxxyDis_[kk]);
+	return (dlab/maxlabDis_[kk]*m_ + dxy*maxxyDis_[kk] + ((unsigned char*)gradientImage8U_.data)[y_arg*cols_+x_arg]*000);
 }
 
 float CalSuperPixel::reinitClusterCenter( std::vector<std::vector<cv::Point> > &superPixelList_return, std::vector<cv::Point> &newCenterPoint )
