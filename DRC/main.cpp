@@ -14,7 +14,7 @@ int main(int argc, char** argv)
 	cv::Mat rawImage = cv::imread("frame0000.jpg");
 	cv::Mat depthImage = cv::imread("a1d.jpg");
 	cv::Mat imlab;
-	cv::cvtColor(rawImage, imlab, CV_RGB2Lab);
+	cv::cvtColor(rawImage, imlab, cv::CV_RGB2Lab);
 	for (int ii = 0; ii < rawImage.rows; ++ii)
 	{
 		for (int jj = 0; jj < rawImage.cols; ++jj)
