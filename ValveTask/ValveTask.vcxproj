@@ -18,17 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="CalSuperPixel.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="CalSuperPixel.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7376C970-51CA-401D-9BEC-DB1F3E7EADF4}</ProjectGuid>
+    <ProjectGuid>{D509B52D-4BBC-4C60-BA3C-3FDCC8AFC748}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>DRC</RootNamespace>
+    <RootNamespace>ValveTask</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -75,26 +68,28 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <ExecutablePath>E:\Source\Opencv248CUDA\OpenCV\bin\Debug;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>E:\Source\Opencv248CUDA\OpenCV\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Source\Opencv248CUDA\OpenCV\lib\Debug;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>E:\Source\OpenCV3\x64\vc12\bin\;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>E:\Source\OpenCV3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Source\OpenCV3\x64\vc12\lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <ExecutablePath>E:\Source\Opencv248CUDA\OpenCV\bin\Debug;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>E:\Source\Opencv248CUDA\OpenCV\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Source\Opencv248CUDA\OpenCV\lib\Debug;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>E:\Source\OpenCV3\x64\vc12\bin\;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>E:\Source\OpenCV3\include;E:\Source\Eigen\include\eigen3\;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Source\OpenCV3\x64\vc12\lib\;$(LibraryPath)</LibraryPath>
+    <ReferencePath>E:\Source\OpenCV3\x64\vc12\bin\;$(ReferencePath)</ReferencePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <ExecutablePath>E:\Source\OpenCV3\x64\vc12\bin\;$(ExecutablePath)</ExecutablePath>
-    <IncludePath>E:\Source\OpenCV3\include\;$(IncludePath)</IncludePath>
+    <IncludePath>E:\Source\OpenCV3\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\Source\OpenCV3\x64\vc12\lib\;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>E:\Source\OpenCV3\x64\vc12\bin\;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>e:\Source\Opencv248CUDA\OpenCV\include;E:\Source\OpenCV3\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\Source\OpenCV3\x64\vc12\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>E:\Source\OpenCV3\include;$(IncludePath)</IncludePath>
+    <LibraryPath>E:\Source\OpenCV3\x64\vc12\lib\;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>E:\Source\OpenCV3\x64\vc12\bin\;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -102,13 +97,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_contrib248d.lib;opencv_calib3d248d.lib;opencv_core248d.lib;opencv_features2d248d.lib;opencv_flann248d.lib;opencv_gpu248d.lib;opencv_highgui248d.lib;opencv_imgproc248d.lib;opencv_legacy248d.lib;opencv_ml248d.lib;opencv_nonfree248d.lib;opencv_objdetect248d.lib;opencv_ocl248d.lib;opencv_photo248d.lib;opencv_superres248d.lib;opencv_ts248d.lib;opencv_video248d.lib;opencv_videostab248d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_core300d.lib;opencv_ml300d.lib;opencv_flann300d.lib;opencv_imgproc300d.lib;opencv_video300d.lib;opencv_imgcodecs300d.lib;opencv_highgui300d.lib;opencv_features2d300d.lib;opencv_calib3d300d.lib;opencv_objdetect300d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -117,13 +112,15 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opencv_contrib248d.lib;opencv_calib3d248d.lib;opencv_core248d.lib;opencv_features2d248d.lib;opencv_flann248d.lib;opencv_gpu248d.lib;opencv_highgui248d.lib;opencv_imgproc248d.lib;opencv_legacy248d.lib;opencv_ml248d.lib;opencv_nonfree248d.lib;opencv_objdetect248d.lib;opencv_ocl248d.lib;opencv_photo248d.lib;opencv_superres248d.lib;opencv_ts248d.lib;opencv_video248d.lib;opencv_videostab248d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opencv_core300d.lib;opencv_ml300d.lib;opencv_flann300d.lib;opencv_imgproc300d.lib;opencv_video300d.lib;opencv_imgcodecs300d.lib;opencv_highgui300d.lib;opencv_features2d300d.lib;opencv_calib3d300d.lib;opencv_objdetect300d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <StackCommitSize>9000000</StackCommitSize>
+      <StackReserveSize>9000000</StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -134,7 +131,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -152,7 +149,7 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
@@ -160,9 +157,17 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>opencv_contrib248.lib;opencv_calib3d248.lib;opencv_core248.lib;opencv_features2d248.lib;opencv_flann248.lib;opencv_gpu248.lib;opencv_highgui248.lib;opencv_imgproc248.lib;opencv_legacy248.lib;opencv_ml248.lib;opencv_nonfree248.lib;opencv_objdetect248.lib;opencv_ocl248.lib;opencv_photo248.lib;opencv_superres248.lib;opencv_ts248.lib;opencv_video248.lib;opencv_videostab248.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Ellipse.cpp" />
+    <ClCompile Include="HoughEllipse.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ellipse.h" />
+    <ClInclude Include="HoughEllipse.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
