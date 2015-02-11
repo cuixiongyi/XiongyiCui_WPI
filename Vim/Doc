@@ -1,0 +1,25 @@
+let mapleader = "9"
+let g:mapleader = "9"
+nmap <leader>w :w!<cr>
+
+map <leader>tn :tabnew<cr>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove 
+map <leader>tt :tabnext 
+"goto Last time tab"
+nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
+
+" Opens a new tab with the current buffer's path
+" Super useful when editing files in the same directory
+map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+
+map <Leader>0 :NERDTreeToggle<CR>
+
+"press * 8 to search the word under the cursor
+map 8 *<cr>
+
+"Open h/cpp file using fswitch
+nmap <Leader>h :FSRight<cr>
+"Switch to the file and load it into a new window split on the right >
+nmap <Leader>hs :FSSplitRight<cr>
