@@ -48,8 +48,9 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-:let mapleader = "9"
+let mapleader = "9"
+let g:mapleader = "9"
+nmap <leader>w :w!<cr>
 
 "gtags
 :map <C-]> :Gtags<CR><CR>
