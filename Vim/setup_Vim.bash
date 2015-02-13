@@ -19,14 +19,28 @@ cd vim
             --enable-luainterp \
             --enable-gui=gtk2 --enable-cscope --prefix=/usr
 make VIMRUNTIMEDIR=/usr/share/vim/vim74
-sudo make 
-sudo checkinstall
+sudo checkinstall make install
 
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
 sudo update-alternatives --set editor /usr/bin/vim
 sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
 sudo update-alternatives --set vi /usr/bin/vim
 
+git clone git://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_awesome_vimrc.sh
+
+#down global from http://www.gnu.org/software/global/download.html
+echo    http://tamacom.com/global/global-6.3.4.tar.gz
+cd ~/downloads
+tar -xvf global-6.3.4.tar.gz 
+cd global-6.3.4/
+sudo apt-get install autoconf bison flex gperf
+sh reconf.sh 
+./configure
+sudo checkinstall
+#build gnu global
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cp ./.vimrc ~/
 mkdir ~/.vim/
 cp -R ./plugin/ ~/.vim/
