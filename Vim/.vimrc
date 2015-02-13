@@ -31,7 +31,7 @@ Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'https://github.com/scrooloose/syntastic.git'
 "Plugin 'https://github.com/Lokaltog/vim-easymotion.git'
 "Plugin 'https://github.com/tpope/vim-fugitive.git'
-"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 
 
 " All of your Plugins must be added before the following line
