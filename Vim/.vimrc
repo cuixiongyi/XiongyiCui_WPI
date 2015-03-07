@@ -81,7 +81,20 @@ nmap <Leader>hs :FSSplitRight<cr>
 
 "use 8 to search instead *
 map 8 *<cr>
-vmap r "_dP
+"r is to delete 1 word and paste
+nnoremap r "_dwP
+vnoremap r "_dwP
+nnoremap R "_dP
+vnoremap R "_dP
+" delete without copy into clipboard
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
 
 "CXY_Setting_End
 "==========================================================================
