@@ -56,6 +56,7 @@ filetype plugin indent on    " required
 :map <C-[> :Gtags -r<CR><CR>
 :map <F10> :cclose<CR>
 :map <F11> :cp<CR>
+vmap r "_dP
 :map <F12> :cn<CR>
 
 "NERDTree
