@@ -81,7 +81,7 @@ nmap <Leader>hs :FSSplitRight<cr>
 
 "use 8 to search instead *
 map 8 *<cr>
-
+vmap r "_dP
 
 "CXY_Setting_End
 "==========================================================================
