@@ -57,6 +57,7 @@ nmap <leader>w :w!<cr>
 :map <C-[> :Gtags -r<CR><CR>
 :map <F10> :cclose<CR>
 :map <F11> :cp<CR>
+vmap r "_dP
 :map <F12> :cn<CR>
 
 "NERDTree
@@ -81,7 +82,20 @@ nmap <Leader>hs :FSSplitRight<cr>
 
 "use 8 to search instead *
 map 8 *<cr>
-
+"r is to delete 1 word and paste
+nnoremap r "_dwP
+vnoremap r "_dwP
+nnoremap R "_dP
+vnoremap R "_dP
+" delete without copy into clipboard
+nnoremap d "_d
+vnoremap d "_d
+nnoremap D "_D
+vnoremap D "_D
+nnoremap c "_c
+vnoremap c "_c
+nnoremap C "_C
+vnoremap C "_C
 
 "CXY_Setting_End
 "==========================================================================
