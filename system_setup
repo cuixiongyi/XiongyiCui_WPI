@@ -1,0 +1,17 @@
+sudo apt-get install git
+git config --global user.name "Xiongyi Cui"
+git config --global user.email cuixiongyi2013@gmail.com
+git config --global credential.helper "cache --timeout=7200"
+
+
+sudo apt-get install build-essential
+
+sudo apt-get install terminator
+sudo apt-get install vim
+
+
+apt-get build-dep emacs24
+
+sudo apt-get install emacs
+
+
