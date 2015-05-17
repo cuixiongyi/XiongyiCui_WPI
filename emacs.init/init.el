@@ -1,7 +1,15 @@
 
 (add-to-list 'load-path "~/repo/XiongyiCui_WPI/emacs.init/")
 
+; gnu global
 (load-file "gtags.el")
+(setq c-mode-hook
+          '(lambda ()
+              (gtags-mode 1)
+	      ))
+
+(load-file "package.el")
+
 (load-theme 'tsdh-dark)
 
 (setq user-full-name "Xiongyi Cui")
