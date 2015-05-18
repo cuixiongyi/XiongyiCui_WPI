@@ -1,39 +1,40 @@
 
 
-(defvar xiongyi/packages '(ac-slime
+(defvar xiongyi/packages '(
+			  ;ac-slime
                           auto-complete
-                          autopair
-                          clojure-mode
-                          clojure-test-mode
-                          coffee-mode
-                          csharp-mode
-                          deft
-                          erlang
-                          feature-mode
+                          ;autopair
+                          ;clojure-mode
+                          ;clojure-test-mode
+                          ;coffee-mode
+                          ;csharp-mode
+                          ;deft
+                          ;erlang
+                          ;feature-mode
                           flycheck
                           gist
                           go-mode
                           graphviz-dot-mode
-                          haml-mode
+                          ;haml-mode
                           ;haskell-mode
                           htmlize
                           magit
                           markdown-mode
                           marmalade
                           ;nodejs-repl
-                          nrepl
-                          o-blog
+                          ;nrepl
+                          ;o-blog
                           org
                           paredit
-                          php-mode
-                          puppet-mode
-                          restclient
+                          ;php-mode
+                          ;puppet-mode
+                          ;restclient
                           rvm
                           scala-mode
                           smex
-                          sml-mode
+                          ;sml-mode
                           ;solarized-theme
-                          web-mode
+                          ;web-mode
                           writegood-mode
                           yaml-mode)
   "Default packages")

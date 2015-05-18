@@ -8,6 +8,23 @@
               (gtags-mode 1)
 	      ))
 
+(require 'cl)
+;(load-file "package.el")
+
+(load-theme 'tsdh-dark)
+
+(setq user-full-name "Xiongyi Cui")
+(setq user-mail-address "cuixiongyi2013@gmail.com")
+
+; package archive
+;(load "package")
+(package-initialize)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(setq package-archive-enable-alist '(("melpa" deft magit)))
 (load-file "package.el")
 
 (load-theme 'tsdh-dark)
@@ -16,7 +33,7 @@
 (setq user-mail-address "cuixiongyi2013@gmail.com")
 
 ; package archive
-(load "package")
+;(load "package")
 (package-initialize)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -24,6 +41,7 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (setq package-archive-enable-alist '(("melpa" deft magit)))
+
 
 
 ; marking text and clip
