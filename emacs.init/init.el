@@ -1,15 +1,15 @@
 
-(add-to-list 'load-path "~/repo/XiongyiCui_WPI/emacs.init/")
+;(add-to-list 'load-path "~/repo/XiongyiCui_WPI/emacs.init/")
 
 ; gnu global
-(load-file "gtags.el")
+(load-file "~/repo/XiongyiCui_WPI/emacs.init/gtags.el")
 (setq c-mode-hook
           '(lambda ()
               (gtags-mode 1)
 	      ))
 
-(require 'cl)
-;(load-file "package.el")
+;(require 'cl)
+;(load-file "~/repo/XiongyiCui_WPI/emacs.init/package.el")
 
 (load-theme 'tsdh-dark)
 
@@ -17,23 +17,7 @@
 (setq user-mail-address "cuixiongyi2013@gmail.com")
 
 ; package archive
-;(load "package")
-(package-initialize)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(setq package-archive-enable-alist '(("melpa" deft magit)))
-(load-file "package.el")
-
-(load-theme 'tsdh-dark)
-
-(setq user-full-name "Xiongyi Cui")
-(setq user-mail-address "cuixiongyi2013@gmail.com")
-
-; package archive
-;(load "package")
 (package-initialize)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
