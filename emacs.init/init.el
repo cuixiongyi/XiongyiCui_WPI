@@ -8,6 +8,19 @@
               (gtags-mode 1)
 	      ))
 
+      (define-key gtags-mode-map (concat gtags-prefix-key "h") 'gtags-display-browser)
+      (define-key gtags-mode-map "\C-]" 'gtags-find-tag-from-here)
+      (define-key gtags-mode-map "\C-t" 'gtags-pop-stack)
+      (define-key gtags-mode-map (concat gtags-prefix-key "P") 'gtags-find-file)
+      (define-key gtags-mode-map (concat gtags-prefix-key "f") 'gtags-parse-file)
+      (define-key gtags-mode-map (concat gtags-prefix-key "g") 'gtags-find-with-grep)
+      (define-key gtags-mode-map (concat gtags-prefix-key "I") 'gtags-find-with-idutils)
+      (define-key gtags-mode-map (concat gtags-prefix-key "s") 'gtags-find-symbol)
+      (define-key gtags-mode-map (concat gtags-prefix-key "r") 'gtags-find-rtag)
+      (define-key gtags-mode-map (concat gtags-prefix-key "t") 'gtags-find-tag)
+      (define-key gtags-mode-map (concat gtags-prefix-key "d") 'gtags-find-tag)
+      (define-key gtags-mode-map (concat gtags-prefix-key "v") 'gtags-visit-rootdir)
+
 ;(require 'cl)
 ;(load-file "~/repo/XiongyiCui_WPI/emacs.init/package.el")
 
@@ -41,12 +54,6 @@
 (setq make-backup-files nil)
 
 ;Yes and No
-
-
-
-
-
-; (setq make-backup-files nil)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 					;
