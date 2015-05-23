@@ -23,7 +23,7 @@
                           ;feature-mode
                           flycheck
                           gist
-                          go-mode
+                          ;go-mode
                           graphviz-dot-mode
                           ;haml-mode
                           ;haskell-mode
@@ -39,8 +39,8 @@
                           ;php-mode
                           ;puppet-mode
                           ;restclient
-                          rvm
-                          scala-mode
+                          ;rvm
+                          ;scala-mode
                           smex
                           ;sml-mode
                           ;solarized-theme
