@@ -1,4 +1,4 @@
-;;; gtags.el --- gtags facility for Emacs
+;; gtags.el --- gtags facility for Emacs
 
 ;(setq debug-on-error t)
 ;;
@@ -144,7 +144,7 @@
   :group 'gtags
   :type 'boolean)
 
-(defcustom gtags-suggested-key-mapping nil
+(defcustom gtags-suggested-key-mapping t
   "*If non-nil, suggested key mapping is enabled."
   :group 'gtags
   :type 'boolean)
