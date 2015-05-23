@@ -3,26 +3,19 @@
 
 ; gnu global
 (load-file "~/repo/XiongyiCui_WPI/emacs.init/gtags.el")
+(setq c++-mode-hook
+          '(lambda ()
+              (gtags-mode 1)
+	      ))
 (setq c-mode-hook
           '(lambda ()
               (gtags-mode 1)
 	      ))
 
-      (define-key gtags-mode-map (concat gtags-prefix-key "h") 'gtags-display-browser)
-      (define-key gtags-mode-map "\C-]" 'gtags-find-tag-from-here)
-      (define-key gtags-mode-map "\C-t" 'gtags-pop-stack)
-      (define-key gtags-mode-map (concat gtags-prefix-key "P") 'gtags-find-file)
-      (define-key gtags-mode-map (concat gtags-prefix-key "f") 'gtags-parse-file)
-      (define-key gtags-mode-map (concat gtags-prefix-key "g") 'gtags-find-with-grep)
-      (define-key gtags-mode-map (concat gtags-prefix-key "I") 'gtags-find-with-idutils)
-      (define-key gtags-mode-map (concat gtags-prefix-key "s") 'gtags-find-symbol)
-      (define-key gtags-mode-map (concat gtags-prefix-key "r") 'gtags-find-rtag)
-      (define-key gtags-mode-map (concat gtags-prefix-key "t") 'gtags-find-tag)
-      (define-key gtags-mode-map (concat gtags-prefix-key "d") 'gtags-find-tag)
-      (define-key gtags-mode-map (concat gtags-prefix-key "v") 'gtags-visit-rootdir)
+      (global-set-key (concat gtags-prefix-key "h") 'gtags-display-browser)
+      (global-set-key "\C-]" 'gtags-find-tag-from-here)
+      (global-set-key gtags-mode-map "\C-t" 'gtags-pop-stack)
 
-;(require 'cl)
-;(load-file "~/repo/XiongyiCui_WPI/emacs.init/package.el")
 
 (load-theme 'tsdh-dark)
 
@@ -31,14 +24,9 @@
 
 ; package archive
 
-(package-initialize)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
-(setq package-archive-enable-alist '(("melpa" deft magit)))
-
+;(require 'cl)
+(load-file "~/repo/XiongyiCui_WPI/emacs.init/package.el")
 
 
 ; marking text and clip
@@ -65,4 +53,26 @@
 (global-set-key (kbd "C--") 'text-scale-decrease)
 (global-set-key (kbd "C-c C-k") 'compile)
 (global-set-key (kbd "C-x g") 'magit-status)
+
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+;; replace the `completion-at-point' and `complete-symbol' bindings in
+;; irony-mode's buffers by irony-mode's function
+(defun my-irony-mode-hook ()
+  (define-key irony-mode-map [remap completion-at-point]
+    'irony-completion-at-point-async)
+  (define-key irony-mode-map [remap complete-symbol]
+    'irony-completion-at-point-async))
+(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+; switch between buffer
+; C-x b
+
+; go back to where the last mark is 
+; C-x C-SPC
+
+
 

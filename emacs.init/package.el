@@ -1,9 +1,19 @@
 
+(require 'package)
+
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(setq package-archive-enable-alist '(("melpa" deft magit)))
+(package-initialize)
+
 
 (defvar xiongyi/packages '(
 			  ;ac-slime
-                          auto-complete
-                          ;autopair
+                          ;auto-complete
+                          autopair
                           ;clojure-mode
                           ;clojure-test-mode
                           ;coffee-mode
@@ -39,6 +49,7 @@
                           yaml-mode)
   "Default packages")
 
+(require 'cl)
 
 (defun xiongyi/packages-installed-p ()
   (loop for pkg in xiongyi/packages
