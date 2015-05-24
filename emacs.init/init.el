@@ -14,7 +14,7 @@
 
       (global-set-key (concat gtags-prefix-key "h") 'gtags-display-browser)
       (global-set-key "\C-]" 'gtags-find-tag-from-here)
-      (global-set-key gtags-mode-map "\C-t" 'gtags-pop-stack)
+      (global-set-key "\C-t" 'gtags-pop-stack)
 
 
 (load-theme 'tsdh-dark)
