@@ -24,5 +24,7 @@ rosdep update
 echo "source /opt/ros/indigo/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 source /opt/ros/indigo/setup.bash
-
+# install catkin workspace
+sudo apt-get install cmake python-catkin-pkg python-empy python-nose python-setuptools libgtest-dev build-essential
+sudo apt-get install ros-indigo-catkin
 
