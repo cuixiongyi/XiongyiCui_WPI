@@ -42,6 +42,8 @@ echo alias xyhome="'cd ~/catkin_ws/'" >> ~/.bashrc
 echo alias repohome="'cd ~/repo/'" >> ~/.bashrc
 echo alias xymake="'catkin_make install' "  >> ~/.bashrc
 
+echo export ROS_PACKAGE_PATH=~/catkin_ws/src:/opt/ros/indigo/share >> ~/.bashrc
+source ~/.bashrc
 
 
 
