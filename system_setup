@@ -8,6 +8,17 @@ sudo apt-get install build-essential
 
 sudo apt-get install terminator
 sudo apt-get install vim
+# install Vundle
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+cp -R ~/repo/XiongyiCui_WPI/Vim/plugin/ ~/.vim/
+vim +PluginInstall +qall
+
+# install YCM
+cd ~/.vim/bundle
+git clone https://github.com/Valloric/YouCompleteMe.git
+cd YouCompleteMe
+git submodule update --init --recursive
+./install.sh --clang-completer  --system-libclang
 
 # processes manegmant 
 sudo apt-get install htop

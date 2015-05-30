@@ -1,19 +1,18 @@
 " set runtimepath+=~/.vim_runtime
-set runtimepath+=~/repo/XiongyiCui_WPI/Vim
+" set runtimepath+=~/repo/XiongyiCui_WPI/Vim
 source ~/repo/XiongyiCui_WPI/Vim/YCM_setting.vim
 " source ~/.vim_runtime/vimrcs/filetypes.vim
 " source ~/.vim_runtime/vimrcs/plugins_config.vim
 " source ~/.vim_runtime/vimrcs/extended.vim
 
-try
+" try
 " source ~/.vim_runtime/my_configs.vim
-catch
-endtry
+" catch
+" endtry
 
-
-" set nocompatible              " be iMproved, required
-" filetype off                  " required
-
+" vundle setting
+set nocompatible              " be iMproved, required
+filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -22,6 +21,12 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+
+" fast switch between .h and .cpp
+Plugin 'derekwyatt/vim-fswitch'
+
+" Indent Guides is a plugin for visually displaying indent levels in Vim.
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
