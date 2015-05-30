@@ -1,18 +1,18 @@
-set runtimepath+=~/.vim_runtime
-
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
+" set runtimepath+=~/.vim_runtime
+set runtimepath+=~/repo/XiongyiCui_WPI/Vim
+source ~/repo/XiongyiCui_WPI/Vim/YCM_setting.vim
+" source ~/.vim_runtime/vimrcs/filetypes.vim
+" source ~/.vim_runtime/vimrcs/plugins_config.vim
+" source ~/.vim_runtime/vimrcs/extended.vim
 
 try
-source ~/.vim_runtime/my_configs.vim
+" source ~/.vim_runtime/my_configs.vim
 catch
 endtry
 
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+" set nocompatible              " be iMproved, required
+" filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -28,7 +28,9 @@ Plugin 'gmarik/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 
-Plugin 'https://github.com/scrooloose/syntastic.git'
+" git wrapper
+Plugin 'tpope/vim-fugitive'
+
 "Plugin 'https://github.com/Lokaltog/vim-easymotion.git'
 "Plugin 'https://github.com/tpope/vim-fugitive.git'
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
