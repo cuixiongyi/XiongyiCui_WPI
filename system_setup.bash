@@ -7,6 +7,7 @@ sudo apt-get install subversion
 sudo apt-get install build-essential
 sudo apt-get install terminator
 sudo apt-get install vim
+sudo apt-get install python-wstool
 # processes manegmant 
 sudo apt-get install htop
 
@@ -70,15 +71,18 @@ catkin_init_workspace
 cd ~/cxy_workspace/
 catkin_make
 source devel/setup.bash
+
+echo '########## system_setup.bash  START' >> ~/.bashrc
 echo source /opt/ros/indigo/setup.bash >> ~/.bashrc
 #echo source /usr/share/drcsim/setup.sh >> ~/.bashrc
 echo source ~/cxy_workspace/devel/setup.bash >> ~/.bashrc
 #echo export ATLAS_ROBOT_INTERFACE=~/cxy_workspace/src/drc/bdi_api/AtlasRobotInterface >> ~/.bashrc
 #echo export LD_LIBRARY_PATH='${LD_LIBRARY_PATH}':'${ATLAS_ROBOT_INTERFACE}'/lib64 >> ~/.bashrc
-echo alias yhome="'cd ~/cxy_workspace/src/'" >> ~/.bashrc
+echo alias yhome="'cd ~/cxy_workspace/src/cxyros'" >> ~/.bashrc
 echo alias ymake="'catkin_make install -DCMAKE_INSTALL_PREFIX:PATH=~/cxy_workspace/install -C ~/cxy_workspace -DCMAKE_BUILD_TYPE=Release'" >> ~/.bashrc
-echo export ROS_PACKAGE_PATH=~/cxy_workspace/src:/opt/ros/indigo/share >> ~/.bashrc
+echo export ROS_PACKAGE_PATH=~/cxy_workspace/src/cxyros:/opt/ros/indigo/share >> ~/.bashrc
 echo alias repohome="'cd ~/repo/'" >> ~/.bashrc
+echo '########## system_setup.bash  END' >> ~/.bashrc
 #echo alias drceclipse="'catkin_make --force-cmake -G\"Eclipse CDT4 - Unix Makefiles\" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_ECLIPSE_MAKE_ARGUMENTS=-j8 -C ~/cxy_workspace'" >> ~/.bashrc
 #echo export GAZEBO_PLUGIN_PATH=~/cxy_workspace/devel/lib:'${GAZEBO_PLUGIN_PATH}' >> ~/.bashrc
 #echo export GAZEBO_MODEL_PATH=~/cxy_workspace/src/drc/field/robotiq:'${GAZEBO_MODEL_PATH}' >> ~/.bashrc
@@ -93,9 +97,9 @@ cd ~/cxy_workspace/src
 # wstool is for workspace overlay 
 # see http://wiki.ros.org/catkin/Tutorials/workspace_overlaying
 wstool init
-wstool set drc https://github.com/WPI-Atlas-Lab/drc --git
-. ~/.bashrc
-wstool update
+wstool set cxyros https://github.com/cuixiongyi/cxy-ros --git
+source ~/.bashrc
+wstool update cxyros
 . ~/.bashrc
 cd ~/cxy_workspace/
 catkin_make
