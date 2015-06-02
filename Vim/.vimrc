@@ -28,6 +28,8 @@ Plugin 'derekwyatt/vim-fswitch'
 " Indent Guides is a plugin for visually displaying indent levels in Vim.
 Plugin 'nathanaelkane/vim-indent-guides'
 
+Plugin 'bling/vim-airline'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
