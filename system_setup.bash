@@ -2,7 +2,9 @@ sudo apt-get install git
 git config --global user.name "Xiongyi Cui"
 git config --global user.email cuixiongyi2013@gmail.com
 git config --global credential.helper "cache --timeout=7200"
-
+cp ./configFile/.gitignore_global ~/
+git config --global core.excludesfile ~/.gitignore_global
+ 
 sudo apt-get install subversion
 sudo apt-get install build-essential
 sudo apt-get install terminator
