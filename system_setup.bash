@@ -75,9 +75,9 @@ echo source /opt/ros/indigo/setup.bash >> ~/.bashrc
 echo source ~/cxy_workspace/devel/setup.bash >> ~/.bashrc
 #echo export ATLAS_ROBOT_INTERFACE=~/cxy_workspace/src/drc/bdi_api/AtlasRobotInterface >> ~/.bashrc
 #echo export LD_LIBRARY_PATH='${LD_LIBRARY_PATH}':'${ATLAS_ROBOT_INTERFACE}'/lib64 >> ~/.bashrc
-echo alias xhome="'cd ~/cxy_workspace/src/drc/'" >> ~/.bashrc
-echo alias xmake="'catkin_make install -DCMAKE_INSTALL_PREFIX:PATH=~/cxy_workspace/install -C ~/cxy_workspace -DCMAKE_BUILD_TYPE=Release'" >> ~/.bashrc
-echo export ROS_PACKAGE_PATH=~/catkin_ws/src:/opt/ros/indigo/share >> ~/.bashrc
+echo alias yhome="'cd ~/cxy_workspace/src/'" >> ~/.bashrc
+echo alias ymake="'catkin_make install -DCMAKE_INSTALL_PREFIX:PATH=~/cxy_workspace/install -C ~/cxy_workspace -DCMAKE_BUILD_TYPE=Release'" >> ~/.bashrc
+echo export ROS_PACKAGE_PATH=~/cxy_workspace/src:/opt/ros/indigo/share >> ~/.bashrc
 echo alias repohome="'cd ~/repo/'" >> ~/.bashrc
 #echo alias drceclipse="'catkin_make --force-cmake -G\"Eclipse CDT4 - Unix Makefiles\" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_ECLIPSE_MAKE_ARGUMENTS=-j8 -C ~/cxy_workspace'" >> ~/.bashrc
 #echo export GAZEBO_PLUGIN_PATH=~/cxy_workspace/devel/lib:'${GAZEBO_PLUGIN_PATH}' >> ~/.bashrc
