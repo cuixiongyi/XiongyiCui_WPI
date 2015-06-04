@@ -24,7 +24,7 @@ let g:ycm_server_log_level = 'info' "default info
 
 
 let g:ycm_global_ycm_extra_conf = '~/repo/XiongyiCui_WPI/Vim/.ycm_extra_conf.py'  "where to search for .ycm_extra_conf.py if not found
-let g:ycm_confirm_extra_conf = 1
+let g:ycm_confirm_extra_conf = 0
 
 
 let g:ycm_goto_buffer_command = 'same-buffer' "[ 'same-buffer', 'horizontal-split', 'vertical-split', 'new-tab' ]
