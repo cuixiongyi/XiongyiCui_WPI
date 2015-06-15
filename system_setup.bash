@@ -10,6 +10,13 @@ sudo apt-get install build-essential
 sudo apt-get install terminator
 sudo apt-get install vim
 sudo apt-get install python-wstool
+
+# for jeklly
+sudo apt-get install ruby2.2
+sudo apt-get install ruby2.2-dev
+sudo apt-get install nodejs
+sudo gem install bundler
+bundle install
 # processes manegmant 
 sudo apt-get install htop
 
@@ -84,6 +91,7 @@ echo alias yhome="'cd ~/cxy_workspace/src/cxyros'" >> ~/.bashrc
 echo alias ymake="'catkin_make install -DCMAKE_INSTALL_PREFIX:PATH=~/cxy_workspace/install -C ~/cxy_workspace -DCMAKE_BUILD_TYPE=Release'" >> ~/.bashrc
 echo export ROS_PACKAGE_PATH=~/cxy_workspace/src/cxyros:/opt/ros/indigo/share >> ~/.bashrc
 echo alias repohome="'cd ~/repo/'" >> ~/.bashrc
+echo alias ypage="'bundle exec jekyll serve'" >> ~/.bashrc
 echo '########## system_setup.bash  END' >> ~/.bashrc
 #echo alias drceclipse="'catkin_make --force-cmake -G\"Eclipse CDT4 - Unix Makefiles\" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_ECLIPSE_MAKE_ARGUMENTS=-j8 -C ~/cxy_workspace'" >> ~/.bashrc
 #echo export GAZEBO_PLUGIN_PATH=~/cxy_workspace/devel/lib:'${GAZEBO_PLUGIN_PATH}' >> ~/.bashrc
