@@ -51,8 +51,6 @@ sudo apt-get update
 sudo apt-get install -y ros-jade-desktop-full
 sudo rosdep init
 rosdep update
-echo source /opt/ros/jade/setup.bash >> ~/.bashrc
-source ~/.bashrc
 source /opt/ros/jade/setup.bash
 # install catkin workspace
 sudo apt-get install -y cmake python-catkin-pkg python-empy python-nose python-setuptools libgtest-dev build-essential
@@ -70,6 +68,7 @@ echo -e $COLOR$onlyroot$MONO #"Only root can do this operation."
 fi
 
 
+sudo chmod 777 -R /home/ 
 
 sudo rosdep init
 rosdep update
@@ -105,6 +104,7 @@ echo '########## system_setup.bash  END' >> ~/.bashrc
 source ~/.bashrc
 cd ~/cxy_workspace/src
 
+sudo chmod 777 -R /home/ 
 # wstool is for workspace overlay 
 # see http://wiki.ros.org/catkin/Tutorials/workspace_overlaying
 wstool init
