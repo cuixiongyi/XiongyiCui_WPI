@@ -37,11 +37,12 @@ cp -R ~/repo/XiongyiCui_WPI/Vim/.vimrc ~/
 vim +PluginInstall +qall
 
 # install YCM
-cd ~/.vim/bundle
-git clone https://github.com/Valloric/YouCompleteMe.git
-cd YouCompleteMe
-git submodule update --init --recursive
-./install.sh --clang-completer  --system-libclang
+# disable YCM for now
+#cd ~/.vim/bundle
+#git clone https://github.com/Valloric/YouCompleteMe.git
+#cd YouCompleteMe
+#git submodule update --init --recursive
+#./install.sh --clang-completer  --system-libclang
 
 # install ROS
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
