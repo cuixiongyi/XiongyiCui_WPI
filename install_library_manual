@@ -1,0 +1,7 @@
+
+# library need manual complie
+ruby 2.2
+ctags
+global # need connect ctags
+clang # may not needed
+

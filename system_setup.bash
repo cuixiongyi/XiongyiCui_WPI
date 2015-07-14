@@ -12,8 +12,6 @@ sudo apt-get install vim
 sudo apt-get install python-wstool
 
 # for jeklly
-sudo apt-get install ruby2.2
-sudo apt-get install ruby2.2-dev
 sudo apt-get install nodejs
 sudo gem install bundler
 bundle install
