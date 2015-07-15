@@ -1,25 +1,27 @@
-sudo apt-get install git
+sudo apt-get install -y git
 git config --global user.name "Xiongyi Cui"
 git config --global user.email cuixiongyi2013@gmail.com
 git config --global credential.helper "cache --timeout=7200"
 cp ./configFile/.gitignore_global ~/
 git config --global core.excludesfile ~/.gitignore_global
  
-sudo apt-get install subversion
-sudo apt-get install build-essential
-sudo apt-get install terminator
-sudo apt-get install vim
-sudo apt-get install python-wstool
+sudo apt-get install -y subversion
+sudo apt-get install -y build-essential
+sudo apt-get install -y terminator
+sudo apt-get install -y vim
+sudo apt-get install -y python-wstool
+sudo apt-get install -y meld 
+
 
 # for jeklly
 sudo apt-get install nodejs
 sudo gem install bundler
 bundle install
 # processes manegmant 
-sudo apt-get install htop
+sudo apt-get install -y htop
 
-apt-get build-dep emacs24
-sudo apt-get install emacs24
+apt-get build-dep -y emacs24
+sudo apt-get install -y emacs24
 
 
 
@@ -35,25 +37,25 @@ cp -R ~/repo/XiongyiCui_WPI/Vim/.vimrc ~/
 vim +PluginInstall +qall
 
 # install YCM
-cd ~/.vim/bundle
-git clone https://github.com/Valloric/YouCompleteMe.git
-cd YouCompleteMe
-git submodule update --init --recursive
-./install.sh --clang-completer  --system-libclang
+# disable YCM for now
+#cd ~/.vim/bundle
+#git clone https://github.com/Valloric/YouCompleteMe.git
+#cd YouCompleteMe
+#git submodule update --init --recursive
+#./install.sh --clang-completer  --system-libclang
 
 # install ROS
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+
 sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-key 0xB01FA116
 sudo apt-get update
-sudo apt-get install ros-indigo-desktop-full
+sudo apt-get install -y ros-jade-desktop-full
 sudo rosdep init
 rosdep update
-echo source /opt/ros/indigo/setup.bash >> ~/.bashrc
-source ~/.bashrc
-source /opt/ros/indigo/setup.bash
+source /opt/ros/jade/setup.bash
 # install catkin workspace
-sudo apt-get install cmake python-catkin-pkg python-empy python-nose python-setuptools libgtest-dev build-essential
-sudo apt-get install ros-indigo-catkin
+sudo apt-get install -y cmake python-catkin-pkg python-empy python-nose python-setuptools libgtest-dev build-essential
+sudo apt-get install -y ros-jade-catkin
 
 
 
@@ -70,8 +72,8 @@ fi
 
 sudo rosdep init
 rosdep update
-source /opt/ros/indigo/setup.bash
-sudo apt-get -y install python-rosinstall
+source /opt/ros/jade/setup.bash
+sudo apt-get install -y python-rosinstall
 mkdir -p ~/cxy_workspace/src
 cd ~/cxy_workspace/src
 catkin_init_workspace
@@ -80,14 +82,14 @@ catkin_make
 source devel/setup.bash
 
 echo '########## system_setup.bash  START' >> ~/.bashrc
-echo source /opt/ros/indigo/setup.bash >> ~/.bashrc
+echo source /opt/ros/jade/setup.bash >> ~/.bashrc
 #echo source /usr/share/drcsim/setup.sh >> ~/.bashrc
 echo source ~/cxy_workspace/devel/setup.bash >> ~/.bashrc
 #echo export ATLAS_ROBOT_INTERFACE=~/cxy_workspace/src/drc/bdi_api/AtlasRobotInterface >> ~/.bashrc
 #echo export LD_LIBRARY_PATH='${LD_LIBRARY_PATH}':'${ATLAS_ROBOT_INTERFACE}'/lib64 >> ~/.bashrc
 echo alias yhome="'cd ~/cxy_workspace/src/cxyros'" >> ~/.bashrc
 echo alias ymake="'catkin_make install -DCMAKE_INSTALL_PREFIX:PATH=~/cxy_workspace/install -C ~/cxy_workspace -DCMAKE_BUILD_TYPE=Release'" >> ~/.bashrc
-echo export ROS_PACKAGE_PATH=~/cxy_workspace/src/cxyros:/opt/ros/indigo/share >> ~/.bashrc
+echo export ROS_PACKAGE_PATH=~/cxy_workspace/src/cxyros:/opt/ros/jade/share >> ~/.bashrc
 echo alias repohome="'cd ~/repo/'" >> ~/.bashrc
 echo alias ypage="'bundle exec jekyll serve'" >> ~/.bashrc
 echo '########## system_setup.bash  END' >> ~/.bashrc
