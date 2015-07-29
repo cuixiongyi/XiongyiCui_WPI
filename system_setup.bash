@@ -28,7 +28,7 @@ sudo apt-get install -y emacs24
 mkdir ~/repo/
 cd ~/repo/
 git clone https://github.com/cuixiongyi/XiongyiCui_WPI
-
+git clone https://github.com/cuixiongyi/cxy_leetcode
 
 # install Vundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -92,6 +92,7 @@ echo alias ymake="'catkin_make install -DCMAKE_INSTALL_PREFIX:PATH=~/cxy_workspa
 echo export ROS_PACKAGE_PATH=~/cxy_workspace/src/cxyros:/opt/ros/jade/share >> ~/.bashrc
 echo alias repohome="'cd ~/repo/'" >> ~/.bashrc
 echo alias ypage="'bundle exec jekyll serve'" >> ~/.bashrc
+echo alias leet-make="'cd ~/repo/build/cxy_leetcode/ && cmake ~/repo/cxy_leetcode/ && make install'" >> ~/.bashrc
 echo '########## system_setup.bash  END' >> ~/.bashrc
 #echo alias drceclipse="'catkin_make --force-cmake -G\"Eclipse CDT4 - Unix Makefiles\" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_ECLIPSE_MAKE_ARGUMENTS=-j8 -C ~/cxy_workspace'" >> ~/.bashrc
 #echo export GAZEBO_PLUGIN_PATH=~/cxy_workspace/devel/lib:'${GAZEBO_PLUGIN_PATH}' >> ~/.bashrc
