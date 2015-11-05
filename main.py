@@ -36,7 +36,7 @@ installItems.append(InstallAble("nodejs", 'nodejs', 'for jeklly'))
 installItems.append(InstallAble("bundler", 'bundler', 'for jeklly'))
 ##
 installItems.append(InstallAble("htop", 'htop'))
-installItems.append(InstallAble("Java", 'oracle-java8-installer', 'install Oracle Java', 'add-apt-repository -y ppa:webupd8team/java\r\n apt-get update\r\n \r\n'))
+installItems.append(InstallAble("Java", 'oracle-java8-installer', 'install Oracle Java', 'sudo add-apt-repository -y ppa:webupd8team/java\r\n sudo apt-get update\r\n '))
 installItems.append(InstallAble("terminator", 'terminator'))
 installItems.append(InstallAble("terminator", 'terminator'))
 installItems.append(InstallAble("terminator", 'terminator'))
