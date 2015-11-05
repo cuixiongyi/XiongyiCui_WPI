@@ -11,16 +11,22 @@ class ExecuteCommandLine():
 class InstallAble():
     installCommonStr_const = "sudo apt-get install -y "
 
-    def __init__(self, p_itemName, p_installPackageName, p_comment = ""):
+    def __init__(self, p_itemName, p_installPackageName, p_comment = ""\
+                 , p_preCommand = ''\
+                 , p_postCommand = ''):
         self.itemName = p_itemName
         self.installPackageName = p_installPackageName
         self.comment = p_comment
+        self.preCommand = p_preCommand
+        self.postCommand = p_postCommand
 
     def getName(self):
         return self.itemName
 
     def getCommandLine(self):
-        return self.installCommonStr_const + self.installPackageName
+        return [self.preCommand, self.installCommonStr_const + self.installPackageName, self.postCommand]
+
+
 
 installItems = []
 installItems.append(InstallAble("git", 'git'))
@@ -30,7 +36,11 @@ installItems.append(InstallAble("nodejs", 'nodejs', 'for jeklly'))
 installItems.append(InstallAble("bundler", 'bundler', 'for jeklly'))
 ##
 installItems.append(InstallAble("htop", 'htop'))
+installItems.append(InstallAble("Java", 'oracle-java8-installer', 'install Oracle Java', 'add-apt-repository -y ppa:webupd8team/java\r\n apt-get update\r\n \r\n'))
 installItems.append(InstallAble("terminator", 'terminator'))
+installItems.append(InstallAble("terminator", 'terminator'))
+installItems.append(InstallAble("terminator", 'terminator'))
+
 
 class MainWindow(Tk):
 
@@ -53,9 +63,10 @@ class MainWindow(Tk):
         for ii in range(len(installItems)):
             tmp1 = self.vars[ii].get()
             if 1 == tmp1:
-                strtmp = installItems[ii].getCommandLine()
-                execCL.execute(execCL, commandLine = strtmp)
-                self.labelResult['text'] = strtmp
+                commandList = installItems[ii].getCommandLine()
+                for str1 in commandList:
+                    execCL.execute(execCL, commandLine = str1)
+                    self.labelResult['text'] = str1
 
     def initialize(self):
         self.grid()
