@@ -15,6 +15,7 @@ sudo apt-get install -y meld
 
 # for jeklly
 sudo apt-get install nodejs
+gem install jekyll
 sudo gem install bundler
 bundle install
 # processes manegmant 
