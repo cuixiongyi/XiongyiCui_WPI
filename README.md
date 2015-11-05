@@ -9,8 +9,8 @@ TODO
 * need a second bash for build lib source code i.e. opencv, clang, global, vim
 
 
-
-sudo apt-get install python3-tk
-# Download main.py
+sudo -i
+apt-get install python3-tk
+#Download main.py
 sudo python3.5 main.py
 
