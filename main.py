@@ -1,12 +1,18 @@
-from Tkinter import *
+from tkinter import *
+import os
 
+class ExecuteCommandLine():
+    def __init__(self):
+        self.commandLine = ''
+
+    def execute(self, commandLine):
+        os.system(commandLine)
 
 class InstallAble():
     installCommonStr_const = "sudo apt-get install -y "
 
     def __init__(self, p_itemName, p_installPackageName, p_comment = ""):
         self.itemName = p_itemName
-        self.commandLine = self.installCommonStr_const
         self.installPackageName = p_installPackageName
         self.comment = p_comment
 
@@ -14,7 +20,7 @@ class InstallAble():
         return self.itemName
 
     def getCommandLine(self):
-        return self.commandLine + self.installPackageName
+        return self.installCommonStr_const + self.installPackageName
 
 installItems = []
 installItems.append(InstallAble("git", 'git'))
@@ -37,13 +43,19 @@ class MainWindow(Tk):
 
 
 
+
     def state(self):
         return map((lambda var: var.get()), self.vars)
 
     def var_states(self):
         global installItems
+        execCL = ExecuteCommandLine
         for ii in range(len(installItems)):
-            print(installItems[ii].getName)
+            tmp1 = self.vars[ii].get()
+            if 1 == tmp1:
+                strtmp = installItems[ii].getCommandLine()
+                execCL.execute(execCL, commandLine = strtmp)
+                self.labelResult['text'] = strtmp
 
     def initialize(self):
         self.grid()
@@ -60,11 +72,16 @@ class MainWindow(Tk):
         Button(self, text='Quit', command=quit).grid(row=rows, sticky=W, pady=4)
         rows += 1
         Button(self, text='Show', command=self.var_states).grid(row=rows, sticky=W, pady=4)
+        rows += 1
+        self.labelResult = Label(self, text='what the fuck')
+        self.labelResult.grid(row=rows, sticky=W, pady=4)
+        rows += 1
 
 if __name__ == "__main__":
     app = MainWindow(None)
     app.title('my application')
     app.mainloop()
+
 
 
 
