@@ -67,6 +67,9 @@ installItems.append(InstallAble("bundler",
 ##
 installItems.append(InstallAble("htop",
                                 'htop'))
+installItems.append(InstallAble("OpenSSL",
+                                'libssl-dev'
+                                , 'need before compile python'))
 installItems.append(InstallAble("Java",
                                 'oracle-java8-installer',
                                 'install Oracle Java',
