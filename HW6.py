@@ -15,7 +15,7 @@ def evalArm(li, si):
         if idx > m2:
             m2 = idx
 
-    return m2-m1
+    return math.fabs(m2-m1)
 
 def incSi(sii):
     if 0 == sii:
@@ -32,23 +32,32 @@ def forloop(li, si, idx):
         for i in range(2):
             si[idx] = incSi(si[idx])
             minmax = evalArm(li, si)
+            #print(si)
+            #print(minmax)
             if minmax < glbMin:
                 glbMin = minmax
                 glbSi = copy.deepcopy(si)
-                print(glbSi)
-                print(glbMin)
+                minmax = evalArm(li, si)
+
     else:
         for i in range(2):
             si[idx] = incSi(si[idx])
+            for ii in range(idx+1, len(si)):
+                si[ii] = 0
             forloop(li, si, idx+1)
 
-def main():
-    idx = 0
-    li = [1,3,5,6,2]
+
+def solve(li):
     si = [0] * len(li)
     forloop(li, si, 0)
     print(glbSi)
     print(glbMin)
+    return glbMin
+
+def main():
+    idx = 0
+    li = [1,1,1]
+    solve(li)
 
 if __name__ == '__main__':
     main()
